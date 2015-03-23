@@ -37,13 +37,12 @@ def move_player(player, move):
 	# If move is DOWN, x + 1
 	elif move == 'DOWN':
 		x += 1
-
 	return x, y
+
 
 def get_moves(player):
 	moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
 	# player = (x, y)
-
 	# If player's y is 0, remove LEFT
 	if player[1] == 0:
 		moves.remove('LEFT')
@@ -81,13 +80,14 @@ print("Welcome to the dungeon!")
 while True:
 	moves = get_moves(player)
 
-	print("You're currently in room {}".format(player)) # fill in with player position
+	print("You're currently in room {}".format(player))
+	# fill in with player position
 
 	draw_map(player, 'X')
 
-	print("You can move {}".format(moves)) # fill in with available moves
+	# fill in with available moves
+	print("You can move {}".format(moves))
 	print("Enter QUIT to quit")
-
 
 	move = input("> ")
 	move = move.upper()
@@ -108,16 +108,13 @@ while True:
 
 	if player == door:
 		draw_map(player, 'O')
-		print("You're currently in room {}".format(player)) # fill in with player position
+		# fill in with player position
+		print("You're currently in room {}".format(player))
 		print("You escaped!")
 		break
 	elif player == monster:
-		draw_map(player, 'D') # 'D' represent Dead
-		print("You're currently in room {}".format(player)) # fill in with player position
+		draw_map(player, 'D')  # 'D' represent Dead
+		# fill in with player position
+		print("You're currently in room {}".format(player))
 		print("You were eaten by the grue!")
 		break
-
-
-
-
-
